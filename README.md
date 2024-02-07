@@ -6,12 +6,6 @@
 
 <h4 align="center">Use this template to host your <i>MTA Strict Transport Security (MTA-STS)</i> <a href="https://datatracker.ietf.org/doc/html/rfc8461">[RFC 8461]</a> policy file on GitHub Pages.</h4>
 
-<p align="center">
-  <a href="#how-to-use">How To Use</a> •
-  <a href="#license">License</a> •
-  <a href="#author">Author</a>
-</p>
-
 MTA-STS is a security standard to secure e-mail delivery. E-mail servers that send inbound e-mail to your domain will be able to detect that your e-mail server supports SMTP-over-TLS via `STARTTLS` (also known as [Opportunistic TLS](https://en.wikipedia.org/wiki/Opportunistic_TLS)) before opening the actual connection.
 
 In case the sending e-mail server is not able to initiate a secure connection, it will end the connection to enforce transport layer encryption. This mitigates [Man-in-the-middle](https://en.wikipedia.org/wiki/Man-in-the-middle_attack) DNS and SMTP [downgrade attacks](https://en.wikipedia.org/wiki/Downgrade_attack) that would allow an attacker to read or manipulate e-mail in transit.
