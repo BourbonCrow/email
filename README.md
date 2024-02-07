@@ -54,13 +54,3 @@ In case the sending e-mail server is not able to initiate a secure connection, i
    It is also quite painful to manually deal with the reports other e-mail providers will send to you. For that particular reason, you may want to consider sending these e-mails to a 3rd-party tool like [Report URI](https://report-uri.com/), [URIports](https://www.uriports.com/), or from other commercial providers.
    
    You probably want this to be the same tool you might use for DMARC reports, like [DMARC Analyzer](https://www.dmarcanalyzer.com/) or [Dmarcian](https://dmarcian.com/).
-
-## License
-
-[MIT License](https://github.com/jpawlowski/mta-sts.template/blob/gh-pages/LICENSE)
-
-## Author
-
-[julian.pawlowski.me](https://julian.pawlowski.me/) &nbsp;&middot;&nbsp;
-GitHub [@jpawlowski](https://github.com/jpawlowski/mta-sts.template) &nbsp;&middot;&nbsp;
-Mastodon [@Loredo@chaos.social](https://chaos.social/@Loredo)
