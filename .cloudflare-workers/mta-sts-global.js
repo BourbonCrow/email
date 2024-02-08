@@ -14,14 +14,26 @@ mx: mail.protonmail.ch
 mx: mailsec.protonmail.ch
 max_age: 86400`
 
-async function handleRequest(request) {
-  return new Response(stsPolicies, {
-    headers: {
-      "content-type": "text/plain;charset=UTF-8",
-    },
-  })
+const respHeaders = {
+  "Content-Type": "text/plain;charset=UTF-8"
 }
 
 addEventListener("fetch", event => {
-  return event.respondWith(handleRequest(event.request))
+  event.respondWith(handleRequest(event.request))
 })
+
+async function handleRequest(request) {
+  const reqUrl = new URL(request.url)
+
+  if (!reqUrl.hostname.startsWith("mta-sts.")) {
+    return new Response(`Incorrect worker route. mta-sts policies must be served on the mta-sts subdomain\n`, {status: 500, headers: respHeaders})
+  }
+
+  if (reqUrl.protocol !== "https:" || reqUrl.pathname !== "/.well-known/mta-sts.txt") {
+    reqUrl.protocol = "https:"
+    reqUrl.pathname = "/.well-known/mta-sts.txt"
+    return Response.redirect(reqUrl, 301)
+  }
+
+  return new Response(stsPolicies + "\n", {status: 200, headers: respHeaders})
+}
