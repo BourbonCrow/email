@@ -14,6 +14,8 @@ mx: mail.protonmail.ch
 mx: mailsec.protonmail.ch
 max_age: 86400`
 
+// Do not edit below here unless you know what you are doing.
+
 const respHeaders = {
   "Content-Type": "text/plain;charset=UTF-8"
 }
