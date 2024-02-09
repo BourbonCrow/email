@@ -93,7 +93,7 @@ max_age: 86400`
 
 2. Validate your setup, for example by using the [MTA-STS Lookup by MXToolBox](https://mxtoolbox.com/mta-sts.aspx), or looking into your [Hardenize Public Report](https://www.hardenize.com/).
 
-*Optional (but __highly recommended__):*
+### *Optional (but __highly recommended__):*
 
 3. Create another `TXT` record for `_smtp._tls.<your_domain.tld>` in your domain's DNS to enable reporting (see [RFC 8460](https://datatracker.ietf.org/doc/html/rfc8460)).
    You may copy & paste this to your DNS provider:
