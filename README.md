@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  📩 MTA-STS Policy file on GitHub or as a Cloudflare Worker
+  📩 MTA-STS Policy file on GitHub or Cloudflare Worker
   <br>
 </h1>
 
