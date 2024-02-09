@@ -35,15 +35,47 @@ In case the sending e-mail server is not able to initiate a secure connection, i
 
 2. Click on Workers & Pages > Overview and Create Worker and name it whatever you like and deploy.
 
-3. Edit the workers code and use the script that fits you most from this [folder](https://github.com/BourbonCrow/email/tree/main/.cloudflare-workers).
+3. Edit the worker you just made and copy one of the scripts that fits you most from this [folder](https://github.com/BourbonCrow/email/tree/main/.cloudflare-workers), Edit the content according to your needs like below.
 
-4. Create a `AAAA` record for `mta-sts.<your_domain.tld>` in your domain's DNS that points to `100::` and make sure Proxy Status is Enabled.
+Global file Proton Mail example:
+```js
+const stsPolicies =
+`version: STSv1
+mode: enforce
+mx: mail.protonmail.ch
+mx: mailsec.protonmail.ch
+max_age: 86400`
+```
+MultiDomain file example:
+```js
+const stsPolicies = {
+  "yourdomain1.com":
+`version: STSv1
+mode: enforce
+mx: mail.yourdomain1.com
+mx: mailsec.yourdomain1.com
+max_age: 86400`,
+  "yourdomain2.com":
+`version: STSv1
+mode: enforce
+mx: mail.yourdomain2.com
+max_age: 86400`,
+  "yourdomain3.com":
+`version: STSv1
+mode: enforce
+mx: mail.yourdomain3.com
+mx: mailsec.yourdomain3.com
+max_age: 86400`
+}
+```
 
-5. Go to Workers Routes and Add route `mta-sts.<yourdomain.tld>/*>` and set the worker to the one you made.
+5. Create a `AAAA` record for `mta-sts.<your_domain.tld>` in your domain's DNS that points to `100::` and make sure Proxy Status is Enabled.
 
-6. Open a browser to `https://mta-sts.<your_domain.tld>` and make sure it does not show any certificate warnings.
+6. Go to Workers Routes and Add route `mta-sts.<yourdomain.tld>/*>` and set the worker to the one you made.
 
-7. Continue <a href="#required-steps-for-both-alternatives">below</a>
+7. Open a browser to `https://mta-sts.<your_domain.tld>` and make sure it does not show any certificate warnings.
+
+8. Continue <a href="#required-steps-for-both-alternatives">below</a>
 
 
 ## Required steps for both alternatives
