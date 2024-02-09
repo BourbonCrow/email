@@ -31,7 +31,7 @@ In case the sending e-mail server is not able to initiate a secure connection, i
 
 ## How To Use with Cloudflare Worker
 
-1. Make sure your domain is on [Cloudflare](https://dash.cloudflare.com/) by either registering it there or changing nameserver on your registrars to cloudflare name servers.
+1. Make sure your domain is on [Cloudflare](https://dash.cloudflare.com/) by either registering it there or changing nameserver on your registrar to cloudflare name servers.
 
 2. Click on Workers & Pages > Overview and `Create Worker` and name it whatever you like and deploy.
 
