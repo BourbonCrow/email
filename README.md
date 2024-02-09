@@ -37,6 +37,8 @@ In case the sending e-mail server is not able to initiate a secure connection, i
 
 3. Edit the worker you just made and copy one of the scripts that fits you most from this [folder](https://github.com/BourbonCrow/email/tree/main/.cloudflare-workers), Edit the content according to your needs like below.
 
+*note: these are not the full scripts these are setting examples, full scripts [here](https://github.com/BourbonCrow/email/tree/main/.cloudflare-workers)
+
 Global file Proton Mail example:
 ```js
 const stsPolicies =
