@@ -33,7 +33,7 @@ In case the sending e-mail server is not able to initiate a secure connection, i
 
 1. Make sure your domain is on [Cloudflare](https://dash.cloudflare.com/) by either registering it there or changing nameserver on your registrars to cloudflare name servers.
 
-2. Click on Workers & Pages > Overview and Create Worker and name it whatever you like and deploy.
+2. Click on Workers & Pages > Overview and `Create Worker` and name it whatever you like and deploy.
 
 3. Edit the worker you just made and copy one of the scripts that fits you most from this [folder](https://github.com/BourbonCrow/email/tree/main/.cloudflare-workers), Edit the content according to your needs like below.
 
@@ -71,7 +71,7 @@ max_age: 86400`
 
 5. Create a `AAAA` record for `mta-sts.<your_domain.tld>` in your domain's DNS that points to `100::` and make sure Proxy Status is Enabled.
 
-6. Go to Workers Routes and Add route `mta-sts.<yourdomain.tld>/*>` and set the worker to the one you made.
+6. Go to Workers Routes and `Add route` and set route to `mta-sts.<yourdomain.tld>/*>` and set the worker to the one you made.
 
 7. Open a browser to `https://mta-sts.<your_domain.tld>` and make sure it does not show any certificate warnings.
 
