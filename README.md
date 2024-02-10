@@ -73,7 +73,7 @@ max_age: 86400`
 
 5. Create a `AAAA` record for `mta-sts.<your_domain.tld>` in your domain's DNS that points to `100::` and make sure Proxy Status is Enabled.
 
-6. Go to Workers Routes and `Add route` and set route to `mta-sts.<yourdomain.tld>/*>` and set the worker to the one you made.
+6. Go to Workers Routes and `Add route` and set route to `mta-sts.<yourdomain.tld>/*` and set the worker to the one you made.
 
 7. Open a browser to `https://mta-sts.<your_domain.tld>` and make sure it does not show any certificate warnings.
 
