@@ -4,8 +4,12 @@
 // Add a DNS AAAA record for mta-sts.yourdomain.com pointing to 100:: and set to proxied,
 // then add a workers route for mta-sts.yourdomain.com/* pointing to this worker.
 
+// You should probably also create a Cloudflare configuration rule disabling Browser Integrity Check for the mta-sts subdomain
+// to ensure MTAs aren't blocked from retrieving your policy.
+
 // You'll still need to manually add the appropriate _mta-sts.yourdomain.com TXT record to enable the policy, 
 // and the _smtp._tls.yourdomain.com TXT record for reporting.
+
 
 const stsPolicies = {
   "yourdomain1.com":
